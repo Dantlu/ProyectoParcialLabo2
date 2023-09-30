@@ -74,7 +74,7 @@ bool buscarPorID(){
         cout<<"ERROR DE ARCHIVO"<<endl;
         return false;
     }
-    cout<<"INGRESAR DNI A BUSCAR ";
+    cout<<"INGRESAR ID A BUSCAR ";
     cin>>ID;
     while(fread(&reg,sizeof(Deportes),1,pDep)==1){
         if(reg.getID()==ID){
@@ -84,7 +84,7 @@ bool buscarPorID(){
     }
     fclose(pDep);
     if(existe==false){
-        cout<<"NO HAY REGISTROS CON ESE DNI"<<endl;
+        cout<<"NO HAY REGISTROS CON ESE ID"<<endl;
     }
     return true;
 }
