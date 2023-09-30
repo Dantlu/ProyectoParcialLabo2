@@ -59,7 +59,7 @@ void agregarRegistroJugadores(){
     reg.Cargar();
     ///Escribimos el registro en el archivo
     if(archi.AgregarRegistro(reg)==true){
-        cout<<"REGISTRO AGREGADO";
+        cout<<"REGISTRO AGREGADO"<<endl;
     }
     else{
         cout<<"NO SE PUDO AGREGAR EL REGISTRO"<<endl;
