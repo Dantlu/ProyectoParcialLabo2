@@ -1,0 +1,83 @@
+# depslib dependency file v1.0
+1695835974 source:c:\users\pc\desktop\proyectoparcial\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"FuncionesGlobales.h"
+	"clsJugadores.h"
+	"SubMenuJugadores.h"
+	"clsDeportes.h"
+	"subMenuDeportes.h"
+
+1695817931 c:\users\pc\desktop\proyectoparcial\funcionesglobales.h
+	<ctime>
+
+1696026313 c:\users\pc\desktop\proyectoparcial\submenujugadores.h
+	"clsJugadores.h"
+	"FuncionesGlobales.h"
+
+1695652954 source:c:\users\dante luongo\desktop\utn\proyectoparcial\proyectoparcial\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"FuncionesGlobales.h"
+	"SubMenuJugadores.h"
+
+1695653302 c:\users\dante luongo\desktop\utn\proyectoparcial\proyectoparcial\funcionesglobales.h
+
+1695737457 c:\users\dante luongo\desktop\utn\proyectoparcial\proyectoparcial\submenujugadores.h
+
+1696011812 c:\users\pc\desktop\proyectoparcial\clsjugadores.h
+
+1695819154 source:c:\users\dante luongo\desktop\utn\labo 2\proyectoparcial\proyectoparcial\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"FuncionesGlobales.h"
+	"clsJugadores.h"
+	"SubMenuJugadores.h"
+
+1695817931 c:\users\dante luongo\desktop\utn\labo 2\proyectoparcial\proyectoparcial\funcionesglobales.h
+	<ctime>
+
+1695835436 c:\users\dante luongo\desktop\utn\labo 2\proyectoparcial\proyectoparcial\clsjugadores.h
+
+1695834615 c:\users\dante luongo\desktop\utn\labo 2\proyectoparcial\proyectoparcial\submenujugadores.h
+	"clsJugadores.h"
+	"FuncionesGlobales.h"
+
+1696025401 c:\users\pc\desktop\proyectoparcial\clsdeportes.h
+	<iostream>
+	<cstring>
+	"FuncionesGlobales.h"
+
+1696026331 c:\users\pc\desktop\proyectoparcial\submenudeportes.h
+	"clsDeportes.h"
+
+1695835974 source:c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"FuncionesGlobales.h"
+	"clsJugadores.h"
+	"SubMenuJugadores.h"
+	"clsDeportes.h"
+	"subMenuDeportes.h"
+
+1695817931 c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\funcionesglobales.h
+	<ctime>
+
+1696089923 c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\clsjugadores.h
+
+1696026313 c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\submenujugadores.h
+	"clsJugadores.h"
+	"FuncionesGlobales.h"
+
+1696025401 c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\clsdeportes.h
+	<iostream>
+	<cstring>
+	"FuncionesGlobales.h"
+
+1696026331 c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\submenudeportes.h
+	"clsDeportes.h"
+
