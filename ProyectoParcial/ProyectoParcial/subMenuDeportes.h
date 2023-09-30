@@ -42,7 +42,7 @@ void subMenuDeportes(){
 
                 return;
             default:
-                cout << "Opción no válida. Intente de nuevo." << endl;
+                cout << "OPCION NO VALIDA, INTENTE DE NUEVO." << endl;
         }
         system("pause");
     }
