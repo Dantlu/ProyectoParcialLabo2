@@ -15,6 +15,7 @@ using namespace std;
 #include "SubMenuJugadores.h"
 #include "clsDeportes.h"
 #include "subMenuDeportes.h"
+#include "subMenuReportes.h"
 
 int main() {
     int opc;
