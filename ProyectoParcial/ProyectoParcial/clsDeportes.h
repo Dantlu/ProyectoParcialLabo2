@@ -44,7 +44,7 @@ public:
     }
 
     bool setfecha(int f) {
-        if (f >= 1800) {
+        if (f >= 1800 && f <= 2023) {
             anio = f;
             return true;
         } else {
