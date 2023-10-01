@@ -35,7 +35,7 @@ public:
 };
 void Fecha::Cargar() {
     bool entra;
-    /// Pide el día
+    /// Pide el dï¿½a
     entra=true;
     while (entra){
         cout<<endl<<"INGRESE EL DIA: ";
@@ -47,7 +47,7 @@ void Fecha::Cargar() {
         else
         {
             cout<<"---------------------------------------------------"<<endl;
-            cout<<"EL DÍA INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
+            cout<<"EL DIA INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
     /// Pide el mes
@@ -62,23 +62,23 @@ void Fecha::Cargar() {
             cout<<"EL MES INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
-    /// Pide el año
+    /// Pide el aï¿½o
     entra=true;
     while (entra){
-        cout<<"INGRESE EL AÑO: ";
+        cout<<"INGRESE EL ANIO: ";
         cin>>anio;
         if (anio>=1000){
             entra=false;
         }else{
             cout<<"---------------------------------------------------"<<endl;
-            cout<<"EL AÑO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
+            cout<<"EL ANIO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
-    /// Verifica si la fecha es válida
+    /// Verifica si la fecha es vï¿½lida
     if (!esFechaValida(dia, mes, anio)) {
         cout << "LA FECHA INGRESADA NO ES VALIDA. INTENTE NUEVAMENTE." << endl;
         cout << endl;
-        Cargar(); /// Se llama a la función de nuevo para que el usuario ingrese una fecha válida
+        Cargar(); /// Se llama a la funciï¿½n de nuevo para que el usuario ingrese una fecha vï¿½lida
     }
 }
 bool esFechaValida(int dia, int mes, int anio) {
@@ -92,10 +92,10 @@ bool esFechaValida(int dia, int mes, int anio) {
         cout << "FECHA ACTUAL:" << f->tm_mday << "/" << f->tm_mon + 1 << "/" << f->tm_year + 1900 << endl;
         return false;
     }
-    /// Verifica si el año es bisiesto (tiene 29 días en febrero)
+    /// Verifica si el aï¿½o es bisiesto (tiene 29 dï¿½as en febrero)
     bool esBisiesto = (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
 
-    /// Verifica si el día es válido para el mes y año dados
+    /// Verifica si el dï¿½a es vï¿½lido para el mes y aï¿½o dados
     if (mes == 2) { /// Febrero
         if (esBisiesto) {
             return dia >= 1 && dia <= 29;
