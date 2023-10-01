@@ -57,7 +57,7 @@ void agregarRegistroDeportes(){
     reg.setID(contID + 1);
     ///Escribimos el registro en el archivo
     if(archi.AgregarRegistro(reg)==true){
-        cout<<"REGISTRO AGREGADO";
+        cout<<"REGISTRO AGREGADO"<<endl;;
     }
     else{
         cout<<"NO SE PUDO AGREGAR EL REGISTRO"<<endl;
