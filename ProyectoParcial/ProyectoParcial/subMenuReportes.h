@@ -45,15 +45,15 @@ void subMenuReportes(){
 }
 
 void punto1() {
-    // Implementación de punto1
+    //   punto1
 }
 
 void punto2() {
-    // Implementación de punto2
+    //  punto2
 }
 
 void punto3() {
-    // Implementación de punto3
+    //  punto3
 }
 
 
