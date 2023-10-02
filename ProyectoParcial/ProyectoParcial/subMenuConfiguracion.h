@@ -7,7 +7,7 @@ int opc;
 
     while(true){
         system("cls");
-        cout << "MENÚ CONFIGURACIÓN" << endl;
+        cout << "MENU CONFIGURACIONES" << endl;
         cout << "------------------" << endl;
         cout << "1) COPIA DE SEGURIDAD DEL ARCHIVO DE JUGADORES" << endl;
         cout << "2) COPIA DE SEGURIDAD DEL ARCHIVO DE DEPORTES" << endl;
@@ -15,7 +15,7 @@ int opc;
         cout << "4) RESTAURAR EL ARCHIVO DE DEPORTES" << endl;
         cout << "5) ESTABLECER DATOS DE INICIO" << endl;
         cout << "--------------------------------" << endl;
-        cout << "0) VOLVER AL MENÚ PRINCIPAL" << endl;
+        cout << "0) VOLVER AL MENU PRINCIPAL" << endl;
         cout << "SELECCIONE UNA OPCION: ";
         cin >> opc;
         system("cls");
@@ -40,7 +40,7 @@ int opc;
 
                 return;
             default:
-                cout << "Opción no válida. Intente de nuevo." << endl;
+                cout << "Opciï¿½n no vï¿½lida. Intente de nuevo." << endl;
         }
         system("pause");
     }
