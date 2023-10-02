@@ -1,6 +1,7 @@
 #ifndef FUNCIONESGLOBALES_H_INCLUDED
 #define FUNCIONESGLOBALES_H_INCLUDED
 #include <ctime>
+#include "clsDeportes.h"
 void cargarCadena(char *palabra, int tam){
     int i = 0;
     fflush(stdin);
@@ -35,7 +36,7 @@ public:
 };
 void Fecha::Cargar() {
     bool entra;
-    /// Pide el d�a
+    /// Pide el día
     entra=true;
     while (entra){
         cout<<endl<<"INGRESE EL DIA: ";
@@ -47,7 +48,7 @@ void Fecha::Cargar() {
         else
         {
             cout<<"---------------------------------------------------"<<endl;
-            cout<<"EL DIA INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
+            cout<<"EL DÍA INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
     /// Pide el mes
@@ -62,23 +63,23 @@ void Fecha::Cargar() {
             cout<<"EL MES INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
-    /// Pide el a�o
+    /// Pide el año
     entra=true;
     while (entra){
-        cout<<"INGRESE EL ANIO: ";
+        cout<<"INGRESE EL AÑO: ";
         cin>>anio;
         if (anio>=1000){
             entra=false;
         }else{
             cout<<"---------------------------------------------------"<<endl;
-            cout<<"EL ANIO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
+            cout<<"EL AÑO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
-    /// Verifica si la fecha es v�lida
+    /// Verifica si la fecha es válida
     if (!esFechaValida(dia, mes, anio)) {
         cout << "LA FECHA INGRESADA NO ES VALIDA. INTENTE NUEVAMENTE." << endl;
         cout << endl;
-        Cargar(); /// Se llama a la funci�n de nuevo para que el usuario ingrese una fecha v�lida
+        Cargar(); /// Se llama a la función de nuevo para que el usuario ingrese una fecha válida
     }
 }
 bool esFechaValida(int dia, int mes, int anio) {
@@ -92,10 +93,10 @@ bool esFechaValida(int dia, int mes, int anio) {
         cout << "FECHA ACTUAL:" << f->tm_mday << "/" << f->tm_mon + 1 << "/" << f->tm_year + 1900 << endl;
         return false;
     }
-    /// Verifica si el a�o es bisiesto (tiene 29 d�as en febrero)
+    /// Verifica si el año es bisiesto (tiene 29 días en febrero)
     bool esBisiesto = (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
 
-    /// Verifica si el d�a es v�lido para el mes y a�o dados
+    /// Verifica si el día es válido para el mes y año dados
     if (mes == 2) { /// Febrero
         if (esBisiesto) {
             return dia >= 1 && dia <= 29;
@@ -108,6 +109,31 @@ bool esFechaValida(int dia, int mes, int anio) {
     return true;
 }
 
+bool BuscarID(int dep) {
+    Deportes reg;
+    FILE *pDep;
+    pDep = fopen("Deportes.dat", "rb");
+    if (pDep == NULL) {
+        cout << "ERROR DE ARCHIVO" << endl;
+        return false;
+    }
 
+    bool encontrado = false;
 
+    while (fread(&reg, sizeof(Deportes), 1, pDep) == 1) {
+        if (reg.getID() == dep) {
+            encontrado = true;
+            break; // Salimos del bucle cuando encontramos el ID
+        }
+    }
+
+    fclose(pDep); // Cierra el archivo después de cada búsqueda
+
+    if (!encontrado) {
+        cout << "El ID de deporte no existe." << endl;
+
+    }
+
+    return encontrado;
+}
 #endif // FUNCIONESGLOBALES_H_INCLUDED

@@ -81,3 +81,39 @@
 1696026331 c:\users\dante luongo\downloads\proyectoparcial (2)\proyectoparcial\submenudeportes.h
 	"clsDeportes.h"
 
+1696203210 source:c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"FuncionesGlobales.h"
+	"clsJugadores.h"
+	"SubMenuJugadores.h"
+	"clsDeportes.h"
+	"subMenuDeportes.h"
+	"subMenuReportes.h"
+	"subMenuConfiguracion.h"
+
+1696265455 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\funcionesglobales.h
+	<ctime>
+	"clsDeportes.h"
+
+1696265394 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\clsjugadores.h
+
+1696203210 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenujugadores.h
+	"clsJugadores.h"
+	"FuncionesGlobales.h"
+
+1696203210 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\clsdeportes.h
+	<iostream>
+	<cstring>
+	"FuncionesGlobales.h"
+
+1696203210 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenudeportes.h
+	"clsDeportes.h"
+
+1696265825 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenureportes.h
+	<iostream>
+	<cstdlib>
+
+1696265654 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenuconfiguracion.h
+

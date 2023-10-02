@@ -101,12 +101,13 @@ void Jugadores::Cargar(int d=-1){
         return;
     }claustro=cla;
 
-    cout<<"DEPORTE: (1 a 10): ";
-    int dp;
-    cin>>dp;
-    if(!setDeporte(dp)){
-        cout<<"DEPORTE INGRESADO NO VALIDO"<<endl;
-    }deporte=dp;
+     cout << "DEPORTE: (1 a 10): ";
+    int dep;
+    cin >> dep;
+
+    if (dep < 1 || dep > 10 || !BuscarID(dep)) {
+        return;
+    }
     cout<<"EQUIPO: ";
     cin>>numEquipo;
     cout<<"FECHA DE INSCRIPCION"<<endl;

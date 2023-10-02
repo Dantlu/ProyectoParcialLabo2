@@ -52,7 +52,7 @@ int opc;
 }
 
 
-void CopiaDeDeguridadJugadores{
+void CopiaDeDeguridadJugadores(){
     FILE* pJugadores;
     FILE* pJugadoresBackup;
 
@@ -67,7 +67,7 @@ void CopiaDeDeguridadJugadores{
         return;
     }
     Jugadores jugador;
-    while (fread(&jugador, sizeof(Jugador), 1, pJugadores) == 1) {
+    while (fread(&jugador, sizeof(jugador), 1, pJugadores) == 1) {
             if(jugador.getEstado()){
                 fwrite(&jugador, sizeof(Jugadores), 1, pJugadoresBackup);
             }
@@ -75,10 +75,10 @@ void CopiaDeDeguridadJugadores{
     fclose(pJugadores);
     fclose(pJugadoresBackup);
     cout << "Copia de seguridad de jugadores realizada correctamente." << endl;
-    
+
 }
 
-void CopiaDeDeguridadDeportes{
+void CopiaDeDeguridadDeportes(){
     FILE* pDeportes;
     FILE* pDeportesBackup;
 
@@ -101,11 +101,11 @@ void CopiaDeDeguridadDeportes{
     fclose(pDeportes);
     fclose(pDeportesBackup);
     cout << "Copia de seguridad de Deportes realizada correctamente." << endl;
-    
+
 }
 
 
-void EstablecerDatosdeInicio{
+void EstablecerDatosdeInicio(){
     FILE* pJugadores;
     FILE* pJugadoresincio;
 
@@ -127,7 +127,7 @@ void EstablecerDatosdeInicio{
     }
     fclose(pJugadores);
     fclose(pJugadoresincio);
-    
+
     FILE* pD;
     FILE* pDI;
 
@@ -149,9 +149,9 @@ void EstablecerDatosdeInicio{
     }
     fclose(pD);
     fclose(pDI);
-    
+
     cout << "Datos establecidos correctamente." << endl;
-    
+
 }
 
 

@@ -1,6 +1,9 @@
 #ifndef SUBMENUREPORTES_H_INCLUDED
 #define SUBMENUREPORTES_H_INCLUDED
+#include <iostream>
+#include <cstdlib>
 
+using namespace std;
 
 void subMenuReportes();
 void punto1();
@@ -41,7 +44,17 @@ void subMenuReportes(){
     }
 }
 
+void punto1() {
+    // Implementación de punto1
+}
 
+void punto2() {
+    // Implementación de punto2
+}
+
+void punto3() {
+    // Implementación de punto3
+}
 
 
 #endif // SUBMENUREPORTES_H_INCLUDED
