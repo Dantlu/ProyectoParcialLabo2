@@ -1,6 +1,7 @@
 #ifndef SUBMENUCONFIGURACION_H_INCLUDED
 #define SUBMENUCONFIGURACION_H_INCLUDED
-
+///PROTOTIPOS
+void EstablecerDatosdeInicio();
 
 void subMenuConfiguracion(){
 int opc;
@@ -34,7 +35,7 @@ int opc;
                     CambiarFechaDeporte();
                 break;
             case 5:
-                    bajaLogicaDeportes();
+                    EstablecerDatosdeInicio();
                 break;
             case 0:
 
@@ -46,7 +47,54 @@ int opc;
     }
 }
 
+void EstablecerDatosdeInicio{
+    FILE* pJugadores;
+    FILE* pJugadoresincio;
 
+    pJugadores = fopen("jugadoresinicio.dat", "rb");
+     if (pJugadores == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    pJugadoresincio = fopen("Jugadores.dat", "wb");
+     if (pJugadoresincio == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    Jugadores jugador;
+    while (fread(&jugador, sizeof(Jugador), 1, pJugadores) == 1) {
+            if(jugador.getEstado()){
+                fwrite(&jugador, sizeof(Jugador), 1, pJugadoresincio);
+            }
+    }
+    fclose(pJugadores);
+    fclose(pJugadoresincio);
+    
+    FILE* pD;
+    FILE* pDI;
+
+    pD = fopen("deportes.ini", "rb");
+     if (pD == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    pDI = fopen("Deportes.dat", "wb");
+     if (pDI == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    Deportes deporte;
+    while (fread(&deporte, sizeof(deporte), 1, pD) == 1) {
+            if(deporte.getEstado()){
+                fwrite(&deporte, sizeof(deporte), 1, pDI);
+            }
+    }
+    fclose(pD);
+    fclose(pDI);
+    
+    cout << "Datos establecidos correctamente." << endl;
+    
+}
 
 
 #endif // SUBMENUCONFIGURACION_H_INCLUDED
