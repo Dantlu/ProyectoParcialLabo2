@@ -1,6 +1,7 @@
 #ifndef SUBMENUCONFIGURACION_H_INCLUDED
 #define SUBMENUCONFIGURACION_H_INCLUDED
 ///PROTOTIPOS
+void subMenuConfiguracion();
 void EstablecerDatosdeInicio();
 void CopiaDeDeguridadJugadores();
 void CopiaDeDeguridadDeportes();
