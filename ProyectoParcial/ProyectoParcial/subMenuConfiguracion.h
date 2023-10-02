@@ -2,6 +2,9 @@
 #define SUBMENUCONFIGURACION_H_INCLUDED
 ///PROTOTIPOS
 void EstablecerDatosdeInicio();
+void CopiaDeDeguridadJugadores();
+void CopiaDeDeguridadDeportes();
+///FIN
 
 void subMenuConfiguracion(){
 int opc;
@@ -23,10 +26,10 @@ int opc;
 
         switch(opc) {
             case 1:
-                    agregarRegistroDeportes();
+                    CopiaDeDeguridadJugadores();
                 break;
             case 2:
-                    buscarPorID();
+                    CopiaDeDeguridadDeportes();
                 break;
             case 3:
                     mostrarDeportes();
@@ -47,6 +50,60 @@ int opc;
     }
 }
 
+
+void CopiaDeDeguridadJugadores{
+    FILE* pJugadores;
+    FILE* pJugadoresBackup;
+
+    pJugadores = fopen("Jugadores.dat", "rb");
+     if (pJugadores == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    pJugadoresBackup = fopen("jugadores_backup.bak", "wb");
+     if (pJugadoresBackup == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    Jugadores jugador;
+    while (fread(&jugador, sizeof(Jugador), 1, pJugadores) == 1) {
+            if(jugador.getEstado()){
+                fwrite(&jugador, sizeof(Jugadores), 1, pJugadoresBackup);
+            }
+    }
+    fclose(pJugadores);
+    fclose(pJugadoresBackup);
+    cout << "Copia de seguridad de jugadores realizada correctamente." << endl;
+    
+}
+
+void CopiaDeDeguridadDeportes{
+    FILE* pDeportes;
+    FILE* pDeportesBackup;
+
+    pDeportes = fopen("Deportes.dat", "rb");
+     if (pDeportes == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    pDeportesBackup = fopen("Deportes_backup.bak", "wb");
+     if (pDeportesBackup == NULL) {
+        cout << "Error al abrir los archivos." << endl;
+        return;
+    }
+    Deportes deporte;
+    while (fread(&deporte, sizeof(Deportes), 1, pDeportes) == 1) {
+            if(deporte.getEstado()){
+                fwrite(&deporte, sizeof(Deportes), 1, pDeportesBackup);
+            }
+    }
+    fclose(pDeportes);
+    fclose(pDeportesBackup);
+    cout << "Copia de seguridad de Deportes realizada correctamente." << endl;
+    
+}
+
+
 void EstablecerDatosdeInicio{
     FILE* pJugadores;
     FILE* pJugadoresincio;
@@ -62,9 +119,9 @@ void EstablecerDatosdeInicio{
         return;
     }
     Jugadores jugador;
-    while (fread(&jugador, sizeof(Jugador), 1, pJugadores) == 1) {
+    while (fread(&jugador, sizeof(Jugadores), 1, pJugadores) == 1) {
             if(jugador.getEstado()){
-                fwrite(&jugador, sizeof(Jugador), 1, pJugadoresincio);
+                fwrite(&jugador, sizeof(Jugadores), 1, pJugadoresincio);
             }
     }
     fclose(pJugadores);
@@ -84,9 +141,9 @@ void EstablecerDatosdeInicio{
         return;
     }
     Deportes deporte;
-    while (fread(&deporte, sizeof(deporte), 1, pD) == 1) {
+    while (fread(&deporte, sizeof(Deportes), 1, pD) == 1) {
             if(deporte.getEstado()){
-                fwrite(&deporte, sizeof(deporte), 1, pDI);
+                fwrite(&deporte, sizeof(Deportes), 1, pDI);
             }
     }
     fclose(pD);
