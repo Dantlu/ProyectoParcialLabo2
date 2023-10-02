@@ -40,7 +40,7 @@ int opc;
 
                 return;
             default:
-                cout << "Opci�n no v�lida. Intente de nuevo." << endl;
+                cout << "OPCION NO VALIDA, INTENTE DE NUEVO." << endl;
         }
         system("pause");
     }
