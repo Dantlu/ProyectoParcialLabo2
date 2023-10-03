@@ -1,7 +1,6 @@
 #ifndef FUNCIONESGLOBALES_H_INCLUDED
 #define FUNCIONESGLOBALES_H_INCLUDED
 #include <ctime>
-#include "clsDeportes.h"
 void cargarCadena(char *palabra, int tam){
     int i = 0;
     fflush(stdin);
@@ -108,24 +107,5 @@ bool esFechaValida(int dia, int mes, int anio) {
     }
     return true;
 }
-bool validarID(int ID){
-    Deportes reg;
-    bool IDencontrado=false;
-    FILE *pDep;
-    pDep=fopen("Deportes.dat","rb");
-    if(pDep==NULL){
-        cout<<"ERROR DE ARCHIVO"<<endl;
-        return false;
-    }
 
-    while(fread(&reg,sizeof reg,1,pDep)==1){
-        if(reg.getID()==ID){
-            IDencontrado=true;
-            break;
-        }
-    }
-
-    fclose(pDep);
-    return IDencontrado;
-}
 #endif // FUNCIONESGLOBALES_H_INCLUDED

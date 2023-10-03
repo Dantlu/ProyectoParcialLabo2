@@ -64,8 +64,8 @@ public:
 
     void Deportes::cargarDeporte() {
 
-        cout << "INGRESE EL NOMBRE: ";
-        cin >> nombre;
+        cout<<"INGRESE EL NOMBRE: ";
+        cargarCadena(nombre, 35);
         cout << "INGRESE EL TIPO DE DEPORTE (1 a 21): ";
         int td;
         cin >> td;
@@ -82,6 +82,7 @@ public:
         }
         estado = true;
     }
+
 
     void Deportes::mostrarDeporte() {
         if (estado == true) {

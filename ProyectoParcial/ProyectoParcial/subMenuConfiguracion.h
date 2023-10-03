@@ -6,6 +6,7 @@ void EstablecerDatosdeInicio();
 void CopiaDeDeguridadJugadores();
 void CopiaDeDeguridadDeportes();
 void restaurarJugadores();
+void restaurarDeportes();
 ///FIN
 
 void subMenuConfiguracion(){

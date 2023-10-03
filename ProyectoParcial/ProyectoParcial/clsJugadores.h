@@ -1,6 +1,7 @@
 #ifndef JUGADORES_H
 #define JUGADORES_H
 #include "FuncionesGlobales.h"
+#include "clsDeportes.h"
 class Jugadores{
 private:
     int DNI;
@@ -77,6 +78,28 @@ public:
     void Mostrar();
 
 };
+
+ bool validarID(int ID){
+    Deportes reg;
+    bool IDencontrado=false;
+    FILE *pDep;
+    pDep=fopen("Deportes.dat","rb");
+    if(pDep==NULL){
+        cout<<"ERROR DE ARCHIVO"<<endl;
+        return false;
+    }
+
+    while(fread(&reg,sizeof reg,1,pDep)==1){
+        if(reg.getID()==ID){
+            IDencontrado=true;
+            break;
+        }
+    }
+
+    fclose(pDep);
+    return IDencontrado;
+}
+
 
 void Jugadores::Cargar(int d=-1){
     if(d==-1){
