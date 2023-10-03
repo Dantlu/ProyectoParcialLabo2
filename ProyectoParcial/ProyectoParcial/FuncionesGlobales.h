@@ -48,7 +48,7 @@ void Fecha::Cargar() {
         else
         {
             cout<<"---------------------------------------------------"<<endl;
-            cout<<"EL DÍA INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
+            cout<<"EL DIA INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
     /// Pide el mes
@@ -66,13 +66,13 @@ void Fecha::Cargar() {
     /// Pide el año
     entra=true;
     while (entra){
-        cout<<"INGRESE EL AÑO: ";
+        cout<<"INGRESE EL ANIO: ";
         cin>>anio;
         if (anio>=1000){
             entra=false;
         }else{
             cout<<"---------------------------------------------------"<<endl;
-            cout<<"EL AÑO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
+            cout<<"EL ANIO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
     }
     /// Verifica si la fecha es válida
@@ -108,32 +108,24 @@ bool esFechaValida(int dia, int mes, int anio) {
     }
     return true;
 }
-
-bool BuscarID(int dep) {
+bool validarID(int ID){
     Deportes reg;
+    bool IDencontrado=false;
     FILE *pDep;
-    pDep = fopen("Deportes.dat", "rb");
-    if (pDep == NULL) {
-        cout << "ERROR DE ARCHIVO" << endl;
+    pDep=fopen("Deportes.dat","rb");
+    if(pDep==NULL){
+        cout<<"ERROR DE ARCHIVO"<<endl;
         return false;
     }
 
-    bool encontrado = false;
-
-    while (fread(&reg, sizeof(Deportes), 1, pDep) == 1) {
-        if (reg.getID() == dep) {
-            encontrado = true;
-            break; // Salimos del bucle cuando encontramos el ID
+    while(fread(&reg,sizeof reg,1,pDep)==1){
+        if(reg.getID()==ID){
+            IDencontrado=true;
+            break;
         }
     }
 
-    fclose(pDep); // Cierra el archivo después de cada búsqueda
-
-    if (!encontrado) {
-        cout << "El ID de deporte no existe." << endl;
-
-    }
-
-    return encontrado;
+    fclose(pDep);
+    return IDencontrado;
 }
 #endif // FUNCIONESGLOBALES_H_INCLUDED

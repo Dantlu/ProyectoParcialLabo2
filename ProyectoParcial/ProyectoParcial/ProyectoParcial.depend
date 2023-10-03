@@ -93,13 +93,14 @@
 	"subMenuReportes.h"
 	"subMenuConfiguracion.h"
 
-1696265455 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\funcionesglobales.h
+1696296202 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\funcionesglobales.h
 	<ctime>
 	"clsDeportes.h"
 
-1696265394 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\clsjugadores.h
+1696296202 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\clsjugadores.h
+	"FuncionesGlobales.h"
 
-1696203210 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenujugadores.h
+1696294708 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenujugadores.h
 	"clsJugadores.h"
 	"FuncionesGlobales.h"
 
@@ -108,10 +109,10 @@
 	<cstring>
 	"FuncionesGlobales.h"
 
-1696203210 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenudeportes.h
+1696295669 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenudeportes.h
 	"clsDeportes.h"
 
-1696265825 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenureportes.h
+1696266020 c:\users\pc\documents\github\proyectoparciallabo2\proyectoparcial\proyectoparcial\submenureportes.h
 	<iostream>
 	<cstdlib>
 

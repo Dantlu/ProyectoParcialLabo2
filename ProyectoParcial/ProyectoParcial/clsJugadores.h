@@ -1,5 +1,6 @@
 #ifndef JUGADORES_H
 #define JUGADORES_H
+#include "FuncionesGlobales.h"
 class Jugadores{
 private:
     int DNI;
@@ -101,13 +102,14 @@ void Jugadores::Cargar(int d=-1){
         return;
     }claustro=cla;
 
-     cout << "DEPORTE: (1 a 10): ";
-    int dep;
-    cin >> dep;
+   while (!validarID(deporte)) {
+    cout << "DEPORTE: (1 a 10): ";
+    cin >> deporte;
 
-    if (dep < 1 || dep > 10 || !BuscarID(dep)) {
-        return;
+    if (!validarID(deporte)) {
+        cout << "EL DEPORTE INGRESADO ES INCORRECTO, INGRESELO NUEVAMENTE" << endl;
     }
+}
     cout<<"EQUIPO: ";
     cin>>numEquipo;
     cout<<"FECHA DE INSCRIPCION"<<endl;
@@ -137,9 +139,9 @@ if(estado==true){
         cout<<telefono<<endl;
         cout<<"CLAUSTRO: ";
         cout<<claustro<<endl;
-        cout<<"DEPORTE: (1 a 10)"<<endl;;
+        cout<<"DEPORTE: (1 a 10)";
         cout<<deporte<<endl;
-        cout<<"EQUIPO"<<endl;
+        cout<<"EQUIPO";
         cout<<numEquipo<<endl;
         cout<<"FECHA INSCRIPCION: "<<endl;
         fechaInscripcion.Mostrar();

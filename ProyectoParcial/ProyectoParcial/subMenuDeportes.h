@@ -97,7 +97,7 @@ void mostrarDeportes(){
 bool CambiarFechaDeporte() {
     ArchivoDeportes archi("Deportes.dat");
     int ID;
-    cout << "Ingrese el ID del deporte al que desea cambiar la fecha de origen: ";
+    cout << "INGRESE EL ID DEL DEPORTE QUE QUIERE CAMBIAR EL ANIO DE ORIGEN: ";
     cin >> ID;
 
     int pos = archi.buscarID(ID);
