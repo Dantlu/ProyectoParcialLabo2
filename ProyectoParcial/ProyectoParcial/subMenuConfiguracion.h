@@ -5,6 +5,7 @@ void subMenuConfiguracion();
 void EstablecerDatosdeInicio();
 void CopiaDeDeguridadJugadores();
 void CopiaDeDeguridadDeportes();
+void restaurarJugadores();
 ///FIN
 
 void subMenuConfiguracion(){
@@ -33,10 +34,10 @@ int opc;
                     CopiaDeDeguridadDeportes();
                 break;
             case 3:
-                    mostrarDeportes();
+                    restaurarJugadores();
                 break;
             case 4:
-                    CambiarFechaDeporte();
+                    restaurarDeportes();
                 break;
             case 5:
                     EstablecerDatosdeInicio();
@@ -103,6 +104,52 @@ void CopiaDeDeguridadDeportes(){
     cout << "Copia de seguridad de Deportes realizada correctamente." << endl;
 
 }
+
+
+void restaurarJugadores(){
+    FILE *pJugadores;
+    FILE *pJugadoresBackup;
+    pJugadoresBackup = fopen("jugadoresBackup.bak", "rb");
+    if (pJugadoresBackup == NULL){
+        cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
+        return;
+    }
+    pJugadores = fopen("Jugadores.dat","wb");
+    if(pJugadores==NULL){
+        cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
+        return;
+    }
+    Jugadores jugador;
+    while(fread(&jugador,sizeof(Jugadores),1, pJugadoresBackup)==1){
+        fwrite(&jugador,sizeof(Jugadores),1,pJugadores);
+    }
+    fclose(pJugadoresBackup);
+    fclose(pJugadores);
+}
+
+
+
+void restaurarDeportes(){
+    FILE *pDeportes;
+    FILE *pDeportesBackup;
+    pDeportesBackup = fopen("deportesBackup.bak", "rb");
+    if (pDeportesBackup == NULL){
+        cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
+        return;
+    }
+    pDeportes = fopen("Jugadores.dat","wb");
+    if(pDeportes==NULL){
+        cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
+        return;
+    }
+    Deportes deporte;
+    while(fread(&deporte,sizeof(Deportes),1, pDeportesBackup)==1){
+        fwrite(&deporte,sizeof(Deportes),1,pDeportes);
+    }
+    fclose(pDeportesBackup);
+    fclose(pDeportes);
+}
+
 
 
 void EstablecerDatosdeInicio(){
