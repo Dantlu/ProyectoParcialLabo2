@@ -73,13 +73,18 @@ public:
             cout << "EL VALOR INGRESADO NO ES VALIDO" << endl;
             return;
         }
-        cout << "INGRESE EL ANIO: ";
-        int an;
-        cin >> an;
-        if (!setfecha(an)) {
-            cout << "EL VALOR INGRESADO NO ES VALIDO" <<endl;
-            return;
+
+       bool entra=true;
+    while (entra){
+        cout<<"INGRESE EL ANIO: ";
+        cin>>anio;
+        if (anio>=1800&&anio<=2023){
+            entra=false;
+        }else{
+            cout<<"---------------------------------------------------"<<endl;
+            cout<<"EL ANIO INGRESADO NO ES VALIDO, INTENTE DE NUEVO:"<<endl;
         }
+    }
         estado = true;
     }
 
