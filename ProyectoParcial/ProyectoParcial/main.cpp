@@ -15,7 +15,7 @@ using namespace std;
 #include "SubMenuJugadores.h"
 #include "clsDeportes.h"
 #include "subMenuDeportes.h"
-#include "subMenuReportes.h"
+#include "Reportes.h"
 #include "subMenuConfiguracion.h"
 
 int main() {
