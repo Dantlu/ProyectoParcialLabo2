@@ -2,6 +2,7 @@
 #define JUGADORES_H
 #include "FuncionesGlobales.h"
 #include "clsDeportes.h"
+
 class Jugadores{
 private:
     int DNI;
@@ -32,7 +33,7 @@ public:
         fechaInscripcion.setAnio(x);
     }
         ///sets
-   void setDNI(int d){DNI=d;}
+    void setDNI(int d){DNI=d;}
     void setNombre(const char *n){strcpy(nombre,n);}
     void setApellido(const char *a){strcpy(apellido, a);}
     void setEmail(const char *e){strcpy(email,e);}
@@ -72,6 +73,7 @@ public:
     int getEquipo(){return numEquipo;}
     float getMatricula(){return matricula;}
     bool getEstado(){return estado;}
+    Fecha getFechaInscripcio(){return fechaInscripcion;}
 
 
     void Cargar(const int);
@@ -138,7 +140,7 @@ void Jugadores::Cargar(int d=-1){
     cout<<"FECHA DE INSCRIPCION"<<endl;
     fechaInscripcion.Cargar();
     cout<<"MATRICULA: ";
-    int mt;
+    float mt;
     cin>>mt;
     if(!setMatricula(mt)){
         cout<<"NUMERO DE MATRICULA INCORRECTO"<<endl;
@@ -162,9 +164,9 @@ if(estado==true){
         cout<<telefono<<endl;
         cout<<"CLAUSTRO: ";
         cout<<claustro<<endl;
-        cout<<"DEPORTE: (1 a 10)";
+        cout<<"DEPORTE: (1 a 10): ";
         cout<<deporte<<endl;
-        cout<<"EQUIPO";
+        cout<<"EQUIPO: ";
         cout<<numEquipo<<endl;
         cout<<"FECHA INSCRIPCION: "<<endl;
         fechaInscripcion.Mostrar();
@@ -173,6 +175,8 @@ if(estado==true){
     }
 
 }
+
+
 
 class ArchivoJugadores {
 private:
@@ -187,25 +191,43 @@ public:
     int buscarDNI(int dni);
     Jugadores leerRegistro(int pos);
     bool modificarRegistro(Jugadores reg, int pos);
-
+    int contarRegistros();
 };
 
-bool ArchivoJugadores::AgregarRegistro(Jugadores reg){
-    FILE *p=fopen(nombre,"ab");
-    if(p==NULL){
-        cout<<"ERROR DE ARCHIVO"<<endl;
+bool ArchivoJugadores::AgregarRegistro(Jugadores reg) {
+    FILE* pJug;
+    pJug = fopen("Jugadores.dat", "ab");
+    if (pJug == NULL) {
+        cout << "ERROR DE ARCHIVO" << endl;
         return false;
     }
+    int pos = buscarDNI(reg.getDNI());
 
-    bool escribio=fwrite(&reg, sizeof reg,1,p);
-    fclose(p);
-    return escribio;
+    if (pos == -1) {
+
+        bool escribio = fwrite(&reg, sizeof(Jugadores), 1, pJug);
+        fclose(pJug);
+        return escribio;
+    } else {
+        cout << "El DNI ya existe en el archivo." << endl;
+        fclose(pJug);
+        return false;
+    }
 }
 
+int ArchivoJugadores::contarRegistros(){
+        FILE *p;
+        p=fopen(nombre,"rb");
+        if(p==NULL) return 0;
+        fseek(p,0,2);
+        int tam=ftell(p);
+        fclose(p);
+        return tam/sizeof(Jugadores);
+      }
 
 bool ArchivoJugadores::listarRegistros(){
     Jugadores reg;
-    FILE *p=fopen(nombre,"rb");
+    FILE *p=fopen("Jugadores.dat","rb");
     if(p==NULL){
         cout<<"ERROR DE ARCHIVO"<<endl;
         return false;
