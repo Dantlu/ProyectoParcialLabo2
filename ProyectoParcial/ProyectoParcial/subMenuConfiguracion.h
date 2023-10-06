@@ -110,7 +110,7 @@ void CopiaDeDeguridadDeportes(){
 void restaurarJugadores(){
     FILE *pJugadores;
     FILE *pJugadoresBackup;
-    pJugadoresBackup = fopen("jugadoresBackup.bak", "rb");
+    pJugadoresBackup = fopen("jugadores_backup.bak", "rb");
     if (pJugadoresBackup == NULL){
         cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
         return;
@@ -133,24 +133,23 @@ void restaurarJugadores(){
 void restaurarDeportes(){
     FILE *pDeportes;
     FILE *pDeportesBackup;
-    pDeportesBackup = fopen("deportesBackup.bak", "rb");
+    pDeportesBackup = fopen("Deportes_backup.bak", "rb");
     if (pDeportesBackup == NULL){
-        cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
+        cout << "ERROR AL ABRIR EL ARCHIVO" << endl;
         return;
     }
-    pDeportes = fopen("Jugadores.dat","wb");
-    if(pDeportes==NULL){
-        cout<<"ERROR AL ABRIR EL ARCHIVO"<<endl;
+    pDeportes = fopen("Deportes.dat", "wb");
+    if (pDeportes == NULL){
+        cout << "ERROR AL ABRIR EL ARCHIVO" << endl;
         return;
     }
     Deportes deporte;
-    while(fread(&deporte,sizeof(Deportes),1, pDeportesBackup)==1){
-        fwrite(&deporte,sizeof(Deportes),1,pDeportes);
+    while (fread(&deporte, sizeof(Deportes), 1, pDeportesBackup) == 1){
+        fwrite(&deporte, sizeof(Deportes), 1, pDeportes);
     }
     fclose(pDeportesBackup);
     fclose(pDeportes);
 }
-
 
 
 void EstablecerDatosdeInicio(){
